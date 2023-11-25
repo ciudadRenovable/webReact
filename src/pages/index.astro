@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import FormContact from "../components/FormContact.astro";
 import { CarouselProjects } from "../components/CarouselProjects";
 import { CarouselClients } from "../components/CarouselClients";
-import { FormContact } from "../components/FormContact";
 ---
 
 <Layout title="Ciudad Renovable">
@@ -126,10 +126,8 @@ import { FormContact } from "../components/FormContact";
 			</div>
 		</section>
 
-		<section id="contacto" class="contact">
-			<div class="mt-10">
-				<FormContact />
-			</div>
+		<section id="contacto" class="contact h-auto p-8">
+			<FormContact />
 		</section>
 	</main>
 
@@ -200,39 +198,6 @@ import { FormContact } from "../components/FormContact";
 			background-color: #021731;
 			color: #00e95f;
 		}
-
-		/* .projects {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-evenly;
-		}
-
-		.projects h2 {
-			color: #021731;
-			text-align: center;
-			font-size: 43px;
-			font-style: normal;
-			font-weight: 800;
-			line-height: normal;
-		}
-
-		.projects_line {
-			width: 85.455px;
-			height: 3px;
-			background: #00e95f;
-			margin: 0 auto;
-		}
-
-		.projects span {
-			color: #51516b;
-			text-align: center;
-			font-size: 24px;
-			font-style: normal;
-			font-weight: 800;
-			line-height: normal;
-			text-transform: uppercase;
-		} */
 
 		.button_projects {
 			display: flex;
