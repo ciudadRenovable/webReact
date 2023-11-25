@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardProjects from "../components/CardProjects.astro";
+const projects = [
+	{
+		title: "Tronex",
+		img: "/images/projects/tronexVitelsa.png",
+	},
+	{
+		title: "Yokomotor",
+		img: "/images/projects/yokoMotor.png",
+	},
+	{
+		title: "EyA CDA Autofull",
+		img: "/images/projects/eya.png",
+	},
+	{
+		title: "Mundial GyP",
+		img: "/images/projects/mundoGYP.png",
+	},
+	{
+		title: "EyA Guayacán de la Calera",
+		img: "/images/projects/EYACalera.png",
+	},
+	{
+		title: "Edemco - Jericó",
+		img: "/images/projects/Edemco.png",
+	},
+	// {
+	// 	title: "Andrés Julián Rendón",
+	// 	img: "/images/proyects/andresrendon.png",
+	// },
+	{
+		title: "Tiendas Ara",
+		img: "/images/projects/tiendasAra.png",
+	},
+	{
+		title: "Juan Pedro Munera",
+		img: "/images/projects/JuanPedroMunera.png",
+	},
+];
+---
+
+<Layout title="Proyectos">
+	<main>
+		<section class="banner"></section>
+
+		<section class="projects_container">
+			<div class="projects_title">
+				<h2>Proyectos</h2>
+				<div></div>
+			</div>
+
+			<span>Te presentamos nuestros proyectos más destacados.</span>
+
+			<div class="projects_grid">
+				{
+					projects.map((project) => (
+						<CardProjects title={project.title} img={project.img} />
+					))
+				}
+			</div>
+		</section>
+	</main>
+
+	<style>
+		.banner {
+			background-image: url("./images/bannerProyectos.png");
+			height: 280px;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.projects_container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 40px;
+		}
+
+		.projects_title {
+			color: #021731;
+			text-align: center;
+			font-size: 43px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		.projects_title > div {
+			width: 85.455px;
+			height: 3px;
+			background: #00e95f;
+			margin: 0 auto;
+		}
+
+		.projects_container span {
+			color: #a8a8a8;
+			text-align: center;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		.projects_grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+	</style>
+</Layout>
