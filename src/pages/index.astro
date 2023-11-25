@@ -7,31 +7,47 @@ import { FormContact } from "../components/FormContact";
 
 <Layout title="Ciudad Renovable">
 	<main>
-		<section class="banner"></section>
+		<section class="banner bg-center"></section>
 
-		<section class="manifest">
-			<div>
-				<h2>Manifesto de marca</h2>
-				<p>
-					Creemos que para ser coherentes con el bienestar que suscitamos, es
-					necesario hablar desde las acciones y decisiones empresariales; por
-					eso, y aunque estamos de acuerdo en que la palabra teje y construye,
-					reflejamos nuestro impact compartiendo los resultados reales de lo que
-					hacemos, de nuestra cultura interna de trabajo y de los cambios
-					positivos en el planeta gracias a los proyectos sostenibles.
-				</p>
-
-				<!-- <div class="button_more">
-					<a href="">Leer Más</a>
-				</div> -->
+		<section class="h-auto lg:h-[211px] bg-[#00e95f]">
+			<div
+				class="max-w-screen-xl container mx-auto h-full flex flex-col md:flex-row items-center justify-center md:justify-between p-8 md:p-16"
+			>
+				<div
+					class="w-full mb-6 md:mb-0 md:mr-8 flex flex-col md:flex-row items-center justify-center md:justify-between"
+				>
+					<h2
+						class="text-[#021731] text-2xl md:text-4xl font-bold leading-tight mb-4 md:mb-6 text-center"
+					>
+						Manifesto de marca
+					</h2>
+					<p
+						class="text-black text-sm md:text-base font-extrabold leading-snug text-justify md:w-3/5"
+					>
+						Creemos que para ser coherentes con el bienestar que suscitamos, es
+						necesario hablar desde las acciones y decisiones empresariales; por
+						eso, y aunque estamos de acuerdo en que la palabra teje y construye,
+						reflejamos nuestro impacto compartiendo los resultados reales de lo
+						que hacemos, de nuestra cultura interna de trabajo y de los cambios
+						positivos en el planeta gracias a los proyectos sostenibles.
+					</p>
+				</div>
 			</div>
 		</section>
 
-		<section id="nosotros" class="about">
-			<div>
-				<div>
-					<h2>Quienes somos</h2>
-					<p>
+		<section id="nosotros" class="about h-auto p-8">
+			<div
+				class="max-w-screen-xl md:p-8 md:mb-6 lg:p-16w-full md:mr-8 flex flex-col md:flex-row items-center justify-center md:justify-between"
+			>
+				<div class="flex flex-col md:w-2/5 lg:3/5">
+					<h2
+						class="text-[#51516B] text-center text-2xl md:text-4xl font-bold leading-tight mb-4 md:mb-6 lg:text-left"
+					>
+						Quienes somos
+					</h2>
+					<p
+						class="text-[#021731] text-black text-sm md:text-base font-extrabold leading-snug text-justify"
+					>
 						Ciudad Renovable es una empresa especializada en el diseño,
 						construcción, operación y consultoría de proyectos de ingeniería con
 						enfoque en energía solar, asegurando la eficiencia energética y
@@ -43,7 +59,10 @@ import { FormContact } from "../components/FormContact";
 					</div>
 				</div>
 
-				<video controls src="/videos/DJI_0292.mp4"></video>
+				<video
+					class="rounded-3xl md:w-2/5 lg:w/1/5"
+					controls
+					src="/videos/DJI_0292.mp4"></video>
 			</div>
 		</section>
 
@@ -53,50 +72,62 @@ import { FormContact } from "../components/FormContact";
 			</div>
 		</section> -->
 
-		<section class="impact">
+		<section
+			class="impact hidden md:flex flex-col items-center justify-center gap-30"
+		>
 			<div>
-				<h2>Nuestro impact en números</h2>
-				<div class="impac_line"></div>
+				<h2 class="text-2xl lg:text-4xl font-extrabold text-[#021731] mb-2">
+					Nuestro impacto en números
+				</h2>
+				<div class="h-1 w-24 bg-[#00E95F] mx-auto mt-2"></div>
 			</div>
-			<img src="./images/impacto.png" alt="impact" />
+			<img src="./images/impacto.png" alt="impacto" />
 		</section>
 
-		<section class="projects">
-			<div>
-				<h2>Proyectos</h2>
-				<div class="projects_line"></div>
-			</div>
+		<section class="projects h-auto bg-[#dcdcdc]">
+			<div
+				class="max-w-screen-xl mx-auto h-full flex flex-col items-center justify-center p-8 md:p-16"
+			>
+				<div>
+					<h2
+						class="text-2xl lg:text-4xl font-extrabold text-[#021731] mb-2 text-center"
+					>
+						Proyectos
+					</h2>
+					<div class="h-1 w-24 bg-[#00E95F] mx-auto my-4"></div>
 
-			<span>Te presentamos nuestros proyectos más destacados.</span>
+					<span class="text-[#51516B] text-center lg:text-2xl text-lg mb-4 w"
+						>Te presentamos nuestros proyectos más destacados.</span
+					>
+				</div>
 
-			<div class="carousel_container">
-				<CarouselProjects />
-			</div>
+				<div class="p-8">
+					<CarouselProjects />
+				</div>
 
-			<div class="button_projects">
-				<a href="#">Ver Más Proyectos</a>
+				<div class="button_projects">
+					<a href="/proyectos">Ver Más Proyectos</a>
+				</div>
 			</div>
 		</section>
 
-		<section class="clients">
-			<div>
-				<h2>Nuestros Clientes</h2>
-				<div class="line_clients"></div>
+		<section class="clients h-auto p-8">
+			<div class="pt-6">
+				<h2
+					class="text-2xl lg:text-4xl font-extrabold text-[#021731] mb-2 text-center"
+				>
+					Nuestros Clientes
+				</h2>
+				<div class="h-1 w-24 bg-[#00E95F] mx-auto my-4"></div>
 			</div>
 
-			<div>
+			<div class="mt-8">
 				<CarouselClients />
 			</div>
 		</section>
 
 		<section id="contacto" class="contact">
-			<div>
-				<h2>Contáctanos</h2>
-				<div class="line_contact"></div>
-			</div>
-			<span> Déjanos tus datos para obtener más información</span>
-
-			<div>
+			<div class="mt-10">
 				<FormContact />
 			</div>
 		</section>
@@ -116,41 +147,6 @@ import { FormContact } from "../components/FormContact";
 			background-image: url(/images/imgBanner.png);
 			background-repeat: no-repeat;
 			background-size: cover;
-		}
-
-		.manifest {
-			height: 211px;
-			background: #00e95f;
-		}
-
-		.manifest > div {
-			max-width: 1438px;
-			margin: 0 auto;
-			height: 100%;
-			display: flex;
-			padding: 30px 50px;
-			gap: 50px;
-			align-items: center;
-			justify-content: space-around;
-		}
-
-		.manifest h2 {
-			color: #021731;
-			font-size: 40px;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-		}
-
-		.manifest p {
-			width: 574px;
-			height: 114px;
-			color: #000;
-
-			font-size: 16px;
-			font-style: normal;
-			font-weight: 800;
-			line-height: normal;
 		}
 
 		.button_more {
@@ -176,76 +172,6 @@ import { FormContact } from "../components/FormContact";
 		.button_more:hover {
 			background-color: #021731;
 			color: #00e95f;
-		}
-
-		.about {
-			height: 484px;
-		}
-
-		.about > div {
-			max-width: 1438px;
-			display: flex;
-			gap: 84px;
-			align-items: center;
-			height: 100%;
-			margin: 0 auto;
-		}
-
-		.about > div > div {
-			width: 50vw;
-			display: flex;
-			flex-direction: column;
-			gap: 30px;
-			padding: 0 50px;
-		}
-
-		.about div h2 {
-			color: #51516b;
-			/* H1 TITULOS */
-
-			font-size: 43px;
-			font-style: normal;
-			font-weight: bolder;
-			line-height: normal;
-		}
-
-		.about div p {
-			color: #a8a8a8;
-			font-size: 22px;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-		}
-
-		.about video {
-			width: 550px;
-			border-radius: 31px;
-		}
-
-		.button_about {
-			display: flex;
-			width: 337px;
-			height: 58px;
-			padding: 10px;
-			justify-content: center;
-			align-items: center;
-			gap: 10px;
-			flex-shrink: 0;
-			border-radius: 37px;
-			border: 1px solid #a8a8a8;
-			color: #a8a8a8;
-			text-align: center;
-			font-size: 24px;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			transition: all 0.4s ease-out;
-			cursor: pointer;
-		}
-
-		.button_about:hover {
-			background-color: #00e95f;
-			color: #021731;
 		}
 
 		.cotizar {
@@ -275,33 +201,7 @@ import { FormContact } from "../components/FormContact";
 			color: #00e95f;
 		}
 
-		.impact {
-			height: 554px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 30px;
-		}
-
-		.impact h2 {
-			color: #021731;
-			font-size: 43px;
-			font-style: normal;
-			font-weight: 800;
-			line-height: normal;
-		}
-
-		.impact .impac_line {
-			width: 85.455px;
-			height: 3px;
-			background: #00e95f;
-			margin: 0 auto;
-		}
-
-		.projects {
-			height: 1034px;
-			background: #dcdcdc;
+		/* .projects {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -332,13 +232,7 @@ import { FormContact } from "../components/FormContact";
 			font-weight: 800;
 			line-height: normal;
 			text-transform: uppercase;
-		}
-
-		.carousel_container {
-			width: 99vw;
-			position: relative;
-			height: 350px;
-		}
+		} */
 
 		.button_projects {
 			display: flex;
@@ -355,24 +249,6 @@ import { FormContact } from "../components/FormContact";
 			font-style: normal;
 			font-weight: 800;
 			line-height: normal;
-			color: #021731;
-		}
-
-		.clients {
-			height: 350px;
-			background: white;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-evenly;
-		}
-
-		.clients h2 {
-			font-size: 43px;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-align: center;
 			color: #021731;
 		}
 
@@ -406,6 +282,12 @@ import { FormContact } from "../components/FormContact";
 			line-height: normal;
 			color: #51516b;
 			text-align: center;
+		}
+
+		@media (max-width: 450px) {
+			.banner {
+				height: 24rem;
+			}
 		}
 	</style>
 </Layout>

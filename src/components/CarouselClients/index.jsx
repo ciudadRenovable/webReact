@@ -11,13 +11,7 @@ import { Pagination } from 'swiper/modules';
 const CarouselClients = () => {
   return (
     <>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '10px',
-        width: '99vw',
-        justifyContent: 'space-evenly'
-      }}>
+      <div className='flex flex-col md:flex-row items-center gap-10 w-99vw justify-evenly'>
         <img style={{ width: '130px' }} src="/images/celsia.png" alt="" />
         <img style={{ width: '190px' }} src="/images/hybritect1.png" alt="" />
         <img style={{ width: '128px' }} src="/images/las-america1.png" alt="" />
