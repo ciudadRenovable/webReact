@@ -1,0 +1,474 @@
+---
+import LayoutProjects from "../../layouts/ProjectsLayout.astro";
+---
+
+<LayoutProjects title="Proyectos - Ciudad Renovable">
+	<section class="m-5 flex items-center flex-col lg:h-[1600px]">
+		<div class="text-center mb-6">
+			<h2
+				class="text-2xl lg:text-4xl font-extrabold text-[#021731] mb-2 text-center"
+			>
+				Proyectos
+			</h2>
+			<div class="h-1 w-24 bg-[#00E95F] mx-auto mt-2"></div>
+		</div>
+
+		<span class="text-[#A8A8A8] text-center lg:text-2xl text-lg mb-4"
+			>Te presentamos nuestros proyectos más destacados.</span
+		>
+
+		<div
+			class="grid grid-cols-1 justify-items-center gap-y-[50px] mt-4 gap-x-[40px] lg:grid-cols-3 md:grid-cols-2"
+			id="content"
+		>
+		</div>
+
+		<div id="pagination" class="flex justify-center mt-8"></div>
+	</section>
+</LayoutProjects>
+
+<script>
+	const projects = [
+		{
+			nameProject: "Rionegro",
+			listImgProject: [
+				"https://i.postimg.cc/HxhZ6D2q/Marta-Toro1.jpg",
+				"https://i.postimg.cc/Jz8LNZtb/Marta-Toro2.jpg",
+				"https://i.postimg.cc/c4RqLCT6/Marta-Toro3.jpg",
+				"https://i.postimg.cc/N00ZD4tr/Marta-Toro4.jpg",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 5.84,
+				production: 7288,
+				TonCO: 3.64,
+			},
+		},
+		{
+			nameProject: "Envigado",
+			listImgProject: [
+				"https://i.postimg.cc/5y94Szs7/Jose-Isaza1-21-11zon.webp",
+				"https://i.postimg.cc/j54qfc4n/Jose-Isaza2-22-11zon.webp",
+				"https://i.postimg.cc/7hBxsLcx/Jose-Isaza3-23-11zon.webp",
+				"https://i.postimg.cc/Kz2v4wBy/Jose-Isaza-20-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 10.6,
+				production: 13229,
+				TonCO: 6.61,
+			},
+		},
+		{
+			nameProject: "Barbosa",
+			listImgProject: [
+				"https://i.postimg.cc/J7TMWG68/Juan-David-Hoyos2.jpg",
+				"https://i.postimg.cc/RZtBfGMC/Juan-David-Hoyos3.jpg",
+				"https://i.postimg.cc/zf11kWBC/Juan-David-Hoyos4.jpg",
+				"https://i.postimg.cc/SK7b1s2w/Juan-David-Hoyos5.jpg",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 14.6,
+				production: 18221,
+				TonCO: 9.11,
+			},
+		},
+		{
+			nameProject: "El Retiro",
+			listImgProject: [
+				"https://i.postimg.cc/fbv1jr1s/Juan-Pedro2-27-11zon.webp",
+				"https://i.postimg.cc/76H8FkSb/Juan-Pedro1-25-11zon.webp",
+				"https://i.postimg.cc/qqWFvV6s/Juan-Pedro3-26-11zon.webp",
+				"https://i.postimg.cc/7YG88XJ1/Juan-Pedro-24-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 10.5,
+				production: 13104,
+				TonCO: 6.55,
+			},
+		},
+		{
+			nameProject: "Energía y Potencia",
+			listImgProject: [
+				"https://i.postimg.cc/HnmcDjBX/EyPSky1.jpg",
+				"https://i.postimg.cc/zXJbxbL1/EyPSky3.jpg",
+				"https://i.postimg.cc/Vs909BkR/EyPSky4.jpg",
+				"https://i.postimg.cc/T1cyRG4S/EyPSky5.jpg",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 68.04,
+				production: 84914,
+				TonCO: 42.46,
+			},
+		},
+		{
+			nameProject: "El Retiro",
+			listImgProject: [
+				"https://i.postimg.cc/3J55hmXP/Maribel1-12-11zon.webp",
+				"https://i.postimg.cc/3N2qNfXz/Maribel2-13-11zon.webp",
+				"https://i.postimg.cc/hPqw6ggn/Maribel3-14-11zon.webp",
+				"https://i.postimg.cc/LXc7HF1z/Maribel5-15-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 5.46,
+				production: 6814,
+				TonCO: 3.41,
+			},
+		},
+		{
+			nameProject: "Mundial Granos y Panelas",
+			listImgProject: [
+				"https://i.postimg.cc/524r936k/Mundial-Gy-P1-29-11zon.webp",
+				"https://i.postimg.cc/8CsnMzdR/Mundial-Gy-P2-30-11zon.webp",
+				"https://i.postimg.cc/Wzm9TFjv/Mundial-Gy-P3-31-11zon.webp",
+				"https://i.postimg.cc/m2NqGq2H/Mundial-Gy-P-28-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 71.02,
+				production: 88633,
+				TonCO: 44.32,
+			},
+		},
+		{
+			nameProject: "Suramericana",
+			listImgProject: [
+				"https://i.postimg.cc/cHgM4KRz/Celsia-Suramerica1-5-11zon.webp",
+				"https://i.postimg.cc/Hxq0Jp3k/Celsia-Suramerica2-6-11zon.webp",
+				"https://i.postimg.cc/jjk4b67N/Celsia-Suramerica3-7-11zon.webp",
+				"https://i.postimg.cc/qq2sy9ZX/Celsia-Suramerica4-8-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 18.2,
+				production: 22714,
+				TonCO: 11.36,
+			},
+		},
+		{
+			nameProject: "Rionegro",
+			listImgProject: [
+				"https://i.postimg.cc/9FWbyfCD/Raul-Sanchez1-33-11zon.webp",
+				"https://i.postimg.cc/XYPgMcF5/Raul-Sanchez2-34-11zon.webp",
+				"https://i.postimg.cc/YC0xyy4k/Raul-Sanchez3-35-11zon.webp",
+				"https://i.postimg.cc/YC0xyy4k/Raul-Sanchez3-35-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 10.92,
+				production: 13628,
+				TonCO: 6.81,
+			},
+		},
+		{
+			nameProject: "Yokomotor",
+			listImgProject: [
+				"https://i.postimg.cc/mDsCRdrP/Yokomotor-2-4-11zon.webp",
+				"https://i.postimg.cc/0j5SKbDx/Yokomotor1-2-11zon.webp",
+				"https://i.postimg.cc/gjMZVmHh/Yokomotor2-3-11zon.webp",
+				"https://i.postimg.cc/KzDLYnKJ/Yokomotor-1-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 85.86,
+				production: 107153,
+				TonCO: 53.58,
+			},
+		},
+		{
+			nameProject: "E&A-Contabler",
+			listImgProject: [
+				"https://i.postimg.cc/0yySyMxC/Ey-AContabler1-9-11zon.webp",
+				"https://i.postimg.cc/7YD7jtWd/Ey-AContabler2-10-11zon.webp",
+				"https://i.postimg.cc/vZ2VgYZw/Ey-AContabler3-11-11zon.webp",
+				"https://i.postimg.cc/nck7xY8z/Ey-AContabler-8-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 17.28,
+				production: 21565,
+				TonCO: 10.78,
+			},
+		},
+		{
+			nameProject: "El Retiro",
+			listImgProject: [
+				"https://i.postimg.cc/wBs71DrD/Genaro1-17-11zon.webp",
+				"https://i.postimg.cc/yxnNMjJC/Genaro2-18-11zon.webp",
+				"https://i.postimg.cc/QdvMZHMC/Genaro3-19-11zon.webp",
+				"https://i.postimg.cc/sgxBRk96/Genaro-16-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 6.88,
+				production: 8586,
+				TonCO: 4.29,
+			},
+		},
+		{
+			nameProject: "Medellín",
+			listImgProject: [
+				"https://i.postimg.cc/RZJMd4TB/Jose-Salazar1-1-11zon.webp",
+				"https://i.postimg.cc/MGyzk543/Jose-Salazar2-2-11zon.webp",
+				"https://i.postimg.cc/xCnn9HVf/Jose-Salazar3-3-11zon.webp",
+				"https://i.postimg.cc/Bbw05VLb/Jose-Salazar4-4-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 3.78,
+				production: 4717,
+				TonCO: 2.36,
+			},
+		},
+		{
+			nameProject: "VE Tower",
+			listImgProject: [
+				"https://i.postimg.cc/y820p64X/VE1-20-11zon.webp",
+				"https://i.postimg.cc/wBJLCK9K/VE2-21-11zon.webp",
+				"https://i.postimg.cc/ncR47Y3W/VE3-22-11zon.webp",
+				"https://i.postimg.cc/pLmDBh7L/VE4-23-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 12.96,
+				production: 16174,
+				TonCO: 8.09,
+			},
+		},
+		{
+			nameProject: "Tronex",
+			listImgProject: [
+				"https://i.postimg.cc/bYRHYjkp/Tronex-Vitelsa-2-41-11zon.webp",
+				"https://i.postimg.cc/pXXQp1J8/Tronex-Vitelsa-40-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 620.4,
+				production: 774259,
+				TonCO: 387.13,
+			},
+		},
+		{
+			nameProject: "Tronex",
+			listImgProject: [
+				"https://i.postimg.cc/PxszJXSr/Tronex-Proto-2-37-11zon.webp",
+				"https://i.postimg.cc/NFQ68Nh3/Tronex-Proto3-38-11zon.webp",
+				"https://i.postimg.cc/T1Qrtrfp/Tronex-Proto4-39-11zon.webp",
+				"https://i.postimg.cc/Ss6LzBPL/Tronex-Proto-36-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 32.4,
+				production: 40435,
+				TonCO: 20.22,
+			},
+		},
+		{
+			nameProject: "Rionegro",
+			listImgProject: [
+				"https://i.postimg.cc/G2GKx84y/Pablo1-16-11zon.webp",
+				"https://i.postimg.cc/hvnryDm3/Pablo2-17-11zon.webp",
+				"https://i.postimg.cc/7hNNjFMP/Pablo3-18-11zon.webp",
+				"https://i.postimg.cc/2jdTqWRp/Pablo4-19-11zon.webp",
+			],
+			info: {
+				systemType: "Residencial",
+				power: 9.1,
+				production: 11357,
+				TonCO: 5.68,
+			},
+		},
+		{
+			nameProject: "E&A-CDA Autofull",
+			listImgProject: [
+				"https://i.postimg.cc/fbFmFwGf/Ey-ACDA1-9-11zon.webp",
+				"https://i.postimg.cc/d3cds5t7/Ey-ACDA2-10-11zon.webp",
+				"https://i.postimg.cc/nrKmCqC3/Ey-ACDA3-11-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 55.08,
+				production: 68740,
+				TonCO: 34.37,
+			},
+		},
+		{
+			nameProject: "E&A-Guayacán de la Calera",
+			listImgProject: [
+				"https://i.postimg.cc/vmpxh0nP/Ey-AGuayacan1-13-11zon.webp",
+				"https://i.postimg.cc/j5PwFyQR/Ey-AGuayacan2-14-11zon.webp",
+				"https://i.postimg.cc/9FJ4KmTw/Ey-AGuayacan3-15-11zon.webp",
+				"https://i.postimg.cc/Zq9y6GWB/Ey-AGuayacan-12-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 63.72,
+				production: 79523,
+				TonCO: 39.76,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - Santa Monica, Bólivar",
+			listImgProject: [
+				"https://i.postimg.cc/nhJdR14h/ARASM1-14-11zon.webp",
+				"https://i.postimg.cc/13rvLNBc/ARASM2-15-11zon.webp",
+				"https://i.postimg.cc/nzg2vKVZ/ARASM3-16-11zon.webp",
+				"https://i.postimg.cc/xjBpHQqH/ARASM-13-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 86.65,
+				production: 108139,
+				TonCO: 54.07,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - Providencia, Bólivar",
+			listImgProject: [
+				"https://i.postimg.cc/XqBF3Tb6/ARAPRO1-10-11zon.webp",
+				"https://i.postimg.cc/Sj09KDS2/ARAPRO2-11-11zon.webp",
+				"https://i.postimg.cc/Hxh5qTFt/ARAPRO3-12-11zon.webp",
+				"https://i.postimg.cc/Qtt1YFYt/ARAPRO-9-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 65.67,
+				production: 81956,
+				TonCO: 40.98,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - San Vicente, Valle del Cauca",
+			listImgProject: [
+				"https://i.postimg.cc/4dmw72gB/ARASV1-18-11zon.webp",
+				"https://i.postimg.cc/cC3mTK63/ARASV3-19-11zon.webp",
+				"https://i.postimg.cc/hPFMv031/ARASV4-20-11zon.webp",
+				"https://i.postimg.cc/TPkCPMZK/ARASV-17-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 72.51,
+				production: 90492,
+				TonCO: 45.25,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - Versalles, Valle del Cauca",
+			listImgProject: [
+				"https://i.postimg.cc/BQxpK1r9/ARAVER1-22-11zon.webp",
+				"https://i.postimg.cc/K8xNr8bK/ARAVER2-23-11zon.webp",
+				"https://i.postimg.cc/Qdmq6ZNf/ARAVER3-24-11zon.webp",
+				"https://i.postimg.cc/gcLNG740/ARAVER-21-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 67.58,
+				production: 84340,
+				TonCO: 42.17,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - El Dorado, Córdoba",
+			listImgProject: [
+				"https://i.postimg.cc/rpqSWnS5/ARADorado2-2-11zon.webp",
+				"https://i.postimg.cc/43wp165q/ARADorado3-3-11zon.webp",
+				"https://i.postimg.cc/XNrDpqN4/ARADorado4-4-11zon.webp",
+				"https://i.postimg.cc/qvssNVCk/ARADorado-1-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 65.64,
+				production: 81919,
+				TonCO: 40.96,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - Barahona, Atlántico",
+			listImgProject: [
+				"https://i.postimg.cc/fT0jh0zS/ARABAR1-26-11zon.webp",
+				"https://i.postimg.cc/FF6gqx4Q/ARABAR2-27-11zon.webp",
+				"https://i.postimg.cc/JzV37406/ARABAR3-28-11zon.webp",
+				"https://i.postimg.cc/FzwyLhZK/ARABAR-25-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 86.11,
+				production: 107465,
+				TonCO: 53.73,
+			},
+		},
+		{
+			nameProject: "Ciudad Luz - Los Corales, Bolivar",
+			listImgProject: [
+				"https://i.postimg.cc/Px3zdWvY/ARACorales2-6-11zon.webp",
+				"https://i.postimg.cc/tgzNMQXr/ARACorales3-7-11zon.webp",
+				"https://i.postimg.cc/gJkH9SjG/ARACorales4-8-11zon.webp",
+				"https://i.postimg.cc/vmyvhHdg/ARACorales-5-11zon.webp",
+			],
+			info: {
+				systemType: "Industrial",
+				power: 79.57,
+				production: 99303,
+				TonCO: 49.65,
+			},
+		},
+	];
+
+	const pageSize = 9;
+	let currentPage = 1;
+	const totalProjects = projects.length;
+	const totalPages = Math.ceil(totalProjects / pageSize);
+
+	function paginate(array, pageSize, pageNumber) {
+		return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+	}
+
+	function loadPage(page) {
+		const projectsOnPage = paginate(projects, pageSize, page);
+		const content = projectsOnPage
+			.map(
+				(project) => `
+        <a href='/proyectos/${project.nameProject}' class="card flex flex-col w-[340px] gap-5 min-h-[400px]">
+          <img class="h-[347px] object-cover rounded-2xl"
+            src=${project.listImgProject[0]}
+            alt="imagen ${project.nameProject}">
+          <h2 class="text-center text-[#51516b] lg:text-2xl text-xl font-bold">
+            ${project.nameProject}
+          </h2>
+        </a>
+    `
+			)
+			.join("");
+
+		document.getElementById("content").innerHTML = content;
+	}
+
+	function renderPaginator() {
+		const paginationElement = document.getElementById("pagination");
+		paginationElement.innerHTML = "";
+
+		for (let i = 1; i <= totalPages; i++) {
+			const div = document.createElement("div");
+			div.className = `px-4 py-2 mx-1 rounded cursor-pointer ${
+				currentPage === i ? "bg-[#00E95F] text-white" : "bg-[#A8A8A8]"
+			}`;
+
+			div.textContent = i;
+
+			div.addEventListener("click", function () {
+				currentPage = i;
+				loadPage(currentPage);
+				renderPaginator();
+			});
+
+			paginationElement.appendChild(div);
+		}
+	}
+
+	loadPage(currentPage);
+	renderPaginator();
+</script>

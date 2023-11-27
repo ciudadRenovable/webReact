@@ -68,15 +68,6 @@
 	</div>
 </header>
 
-<script is:inline>
-	const handleMobileMenu = document.getElementById("toggleMobileMenu");
-	const mobileMenu = document.getElementById("mobileMenu");
-
-	handleMobileMenu.addEventListener("click", () => {
-		mobileMenu.classList.toggle("show");
-	});
-</script>
-
 <style>
 	header {
 		display: flex;
@@ -152,3 +143,12 @@
 		}
 	}
 </style>
+
+<script>
+	const handleMobileMenu = document.getElementById("toggleMobileMenu");
+	const mobileMenu = document.getElementById("mobileMenu");
+
+	handleMobileMenu.addEventListener("click", () => {
+		mobileMenu.classList.toggle("show");
+	});
+</script>

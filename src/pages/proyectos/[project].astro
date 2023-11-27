@@ -1,22 +1,8 @@
 ---
-import LayoutProjects from "../layouts/ProjectsLayout.astro";
----
+import ProjectsLayout from "../../layouts/ProjectsLayout.astro";
+import { SelectProjectImage } from "../../components/SelectProjectImage";
 
-<LayoutProjects title="Proyectos - Ciudad Renovable">
-	<span class="text-[#A8A8A8] text-center lg:text-2xl text-lg mb-4"
-		>Te presentamos nuestros proyectos más destacados.</span
-	>
-
-	<div
-		class="grid grid-cols-1 justify-items-center gap-y-[50px] mt-4 gap-x-[40px] lg:grid-cols-3 md:grid-cols-2"
-		id="content"
-	>
-	</div>
-
-	<div id="pagination" class="flex justify-center mt-8"></div>
-</LayoutProjects>
-
-<script>
+export function getStaticPaths() {
 	const projects = [
 		{
 			nameProject: "Rionegro",
@@ -407,57 +393,76 @@ import LayoutProjects from "../layouts/ProjectsLayout.astro";
 		},
 	];
 
-	const pageSize = 9;
-	let currentPage = 1;
-	const totalProjects = projects.length;
-	const totalPages = Math.ceil(totalProjects / pageSize);
+	return projects.map((project) => {
+		return {
+			params: { project: project.nameProject },
+			props: project,
+		};
+	});
+}
 
-	function paginate(array, pageSize, pageNumber) {
-		return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
-	}
+const { nameProject, listImgProject, info } = Astro.props;
+---
 
-	function loadPage(page) {
-		const projectsOnPage = paginate(projects, pageSize, page);
-		const content = projectsOnPage
-			.map(
-				(project) => `
-        <div class="card flex flex-col w-[340px] gap-5 min-h-[400px]">
-          <img class="h-[347px] object-cover rounded-2xl"
-            src=${project.listImgProject[0]}
-            alt="imagen ${project.nameProject}">
-          <h2 class="text-center text-[#51516b] lg:text-2xl text-xl font-bold">
-            ${project.nameProject}
-          </h2>
-        </div>
-    `
-			)
-			.join("");
+<ProjectsLayout title="Ciudad Renovable">
+	<section class="flex flex-col items-center my-5">
+		<h2
+			class="text-2xl lg:text-4xl font-extrabold text-[#021731] mb-2 text-center"
+		>
+			{nameProject}
+		</h2>
 
-		document.getElementById("content").innerHTML = content;
-	}
+		<SelectProjectImage listImgProject={listImgProject} client:load />
 
-	function renderPaginator() {
-		const paginationElement = document.getElementById("pagination");
-		paginationElement.innerHTML = "";
+		<div>
+			<h2
+				class="text-2xl lg:text-4xl font-extrabold text-[#021731] my-4 text-center"
+			>
+				Detalles
+			</h2>
 
-		for (let i = 1; i <= totalPages; i++) {
-			const div = document.createElement("div");
-			div.className = `px-4 py-2 mx-1 rounded cursor-pointer ${
-				currentPage === i ? "bg-blue-500 text-white" : "bg-gray-300"
-			}`;
-
-			div.textContent = i;
-
-			div.addEventListener("click", function () {
-				currentPage = i;
-				loadPage(currentPage);
-				renderPaginator();
-			});
-
-			paginationElement.appendChild(div);
-		}
-	}
-
-	loadPage(currentPage);
-	renderPaginator();
-</script>
+			<ul class="W-[80vw] p-4">
+				<li class="flex justify-between items-center h-14 border-y">
+					<div class="flex flex-row items-center w-3/4">
+						<img
+							class="w-11"
+							src="/icons/icono_tipo_de_sistem.png"
+							alt="tipo de sistema"
+						/>
+						<p class="text-[#51516B]">Tipo de sistema</p>
+					</div>
+					<p class="text-[#021731] font-extrabold">{info.systemType}</p>
+				</li>
+				<li class="flex justify-between items-center h-14 border-y">
+					<div class="flex flex-row items-center w-3/4">
+						<img class="w-11" src="/icons/icono_potencia.png" alt="potencia" />
+						<p class="text-[#51516B]">Potencia</p>
+					</div>
+					<p class="text-[#021731] font-extrabold">{info.power}</p>
+				</li>
+				<li class="flex justify-between items-center h-14 border-y">
+					<div class="flex flex-row items-center w-3/4">
+						<img
+							class="w-11"
+							src="/icons/icono_produccion.png"
+							alt="produccion"
+						/>
+						<p class="text-[#51516B]">
+							Producción neta de la instalación [kWh/año]
+						</p>
+					</div>
+					<p class="text-[#021731] font-extrabold">{info.production}</p>
+				</li>
+				<li class="flex justify-between items-center h-14 border-y">
+					<div class="flex flex-row items-center w-3/4">
+						<img class="w-11" src="/icons/icono_ahorro.png" alt="ahorro" />
+						<p class="text-[#51516B]">
+							Ahorro anual de CO₂ de la instalación [TonCO₂/año]
+						</p>
+					</div>
+					<p class="text-[#021731] font-extrabold">{info.TonCO}</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+</ProjectsLayout>
