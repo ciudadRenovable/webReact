@@ -10,7 +10,7 @@ export const CarouselProjects = () => {
   return (
     <>
 
-      <div class='flex flex flex-col md:flex-row gap-5 flex-wrap md:flex-nowrap'>
+      <div className='flex flex flex-col lg:flex-row gap-5 flex-wrap md:flex-nowrap'>
         <div className="card">
           <img src="/images/projects/tiendasAra.png" alt="" />
           <h2>Tiendas ARA</h2>
