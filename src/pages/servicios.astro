@@ -1,5 +1,6 @@
 ---
 import ProjectsLayout from "../layouts/ProjectsLayout.astro";
+import { ItemAcordion } from "../components/ItemAcordion";
 ---
 
 <ProjectsLayout title="Servicios - Ciudad Renovable">
@@ -41,82 +42,61 @@ import ProjectsLayout from "../layouts/ProjectsLayout.astro";
 		</div>
 
 		<div class="p-8 flex flex-col gap-4 max-w-screen-md">
-			<div class="bg-[#00E95F] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/light.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Somos especialistas en proyectos de ingeniería con enfoque en energía
-				</p>
-			</div>
-			<div class="bg-[#00e95fcf] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/circleCheck.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					EPC para sistemas solares fotovoltaicos
-				</p>
-			</div>
-			<div class="bg-[#00e95f8f] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/battery.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Desarrollo de diseño e ingeniería detallada de sistemas solares
-					fotovoltaicos e iluminación
-				</p>
-			</div>
-			<div class="bg-[#51516B] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/check.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Legalización de proyectos solares fotovoltaicos bajo resolución CREG
-					174 de 2021
-				</p>
-			</div>
-			<div class="bg-[#51516bd4] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/bombilla.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Estudios de prefactibilidad, factibilidad y desarrollo de proyectos a
-					gran escala
-				</p>
-			</div>
-			<div class="bg-[#51516b9c] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/check.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Trámites de beneficios tributarios de ley 1715 de 2014
-				</p>
-			</div>
-			<div class="bg-[#00E95F] flex flex-row items-center p-4 h-28">
+			<ItemAcordion
+				icon="/icons/light.svg"
+				textInfo="Ciudad Renovable es una empresa especializada en el diseño, construcción, operación y consultoría de proyectos de ingeniería con enfoque en energía solar, asegurando la eficiencia energética y optimizando el uso de los recursos. En Ciudad Renovable encuentras acompañamiento constante y especializado durante y después de tu proyecto de diseño, construcción o consultoría, respaldados por nuestra experiencia y equipo humano lo que nos permite brindarte la confianza para realizar tu proyecto de manera segura y eficiente"
+				textTitle="Somos especialistas en proyectos de ingeniería con enfoque en energía"
+				height="56"
+				bgColor="#00E95F"
+				client:load
+			/>
+
+			<ItemAcordion
+				icon="/icons/circleCheck.svg"
+				textInfo="Gracias a las personas que confían y apuestan por una Ciudad Renovable hemos instalado más de 800 kWp en proyectos a lo largo del territorio nacional."
+				textTitle="EPC para sistemas solares fotovoltaicos"
+				height="20"
+				bgColor="#00e95fcf"
+				client:load
+			/>
+
+			<ItemAcordion
+				icon="/icons/battery.svg"
+				textInfo="Somos especialistas en el diseño de ingeniería de detalle para sistemas solares fotovoltaicos. Gracias a nuestra experiencia, conocimiento detallado y a la confianza de nuestros clientes, hemos desarrollado la ingeniería de detalle de más de 1 MWp en SSFV distribuidos a lo largo del territorio colombiano"
+				textTitle="Desarrollo de diseño e ingeniería detallada de sistemas solares fotovoltaicos e iluminación"
+				bgColor="#00e95f"
+				height="32"
+				client:load
+			/>
+
+			<ItemAcordion
+				icon="/icons/check.svg"
+				textInfo="En Ciudad Renovable realizamos ingeniería detallada para sistemas solares fotovoltaicos existentes, acompañamiento y asesoría para inspecciones RETIE y trámites necesarios para la interconexión de SSFV ante el operador de red bajo la regulación CREG 030 de 2018. Gracias a la regulación CREG 030 de 2018 muchos de nuestros clientes han logrado reducir a cero el valor de la energía eléctrica en la cuenta de servicios"
+				textTitle="Legalización de proyectos solares fotovoltaicos bajo resolución CREG 174 de 2021"
+				bgColor="#51516B"
+				height="32"
+				client:load
+			/>
+
+			<ItemAcordion
+				icon="/icons/bombilla.svg"
+				textInfo="En Ciudad Renovable desarrollamos consultoría técnica y financiera en etapa de prefactibilidad o factibilidad para parques solares fotovoltaicos a gran escala a lo largo del territorio colombiano. Describiendo los detalles más relevantes para el diseño del proyecto solar, presentando alternativas técnico-financieras para el desarrollo del mismo. En la actualidad nos encontramos en el desarrollo de la ingeniería en etapa de factibilidad para una granja solar de mas de 20 MWp"
+				textTitle="Estudios de prefactibilidad, factibilidad y desarrollo de proyectos a gran escala"
+				bgColor="#51516bd4"
+				height="32"
+				client:load
+			/>
+
+			<ItemAcordion
+				icon="/icons/check.svg"
+				textInfo="En Ciudad Renovable realizamos los trámites necesarios ante la UPME para la obtención de beneficios tributarios de la Ley 1715 de 2014 para SSFV en etapa de ingeniería o de puesta en marcha"
+				textTitle="Trámites de beneficios tributarios de ley 1715 de 2014"
+				bgColor="#51516b9c"
+				height="32"
+				client:load
+			/>
+
+			<!-- <div class="bg-[#00E95F] flex flex-row items-center p-4 h-28">
 				<img
 					class="border-r-2 w-14 pr-2 border-[#021731]"
 					src="/icons/light.svg"
@@ -127,19 +107,16 @@ import ProjectsLayout from "../layouts/ProjectsLayout.astro";
 				>
 					Gerencia de proyectos de ingeniería eléctrica
 				</p>
-			</div>
-			<div class="bg-[#00e95fcf] flex flex-row items-center p-4 h-28">
-				<img
-					class="border-r-2 w-14 pr-2 border-[#021731]"
-					src="/icons/circleCheck.svg"
-					alt="servicios"
-				/>
-				<p
-					class="text-[#021731] text-sm md:text-base font-extrabold leading-snug text-justify p-4"
-				>
-					Mantenimiento de sistemas fotovoltaicos
-				</p>
-			</div>
+			</div> -->
+
+			<ItemAcordion
+				icon="/icons/circleCheck.svg"
+				textInfo="Conscientes de la importancia de los mantenimientos preventivos en SSFV para prolongar su tiempo de vida útil y mantener la eficiencia en los niveles calculados, hemos desarrollado un procedimiento riguroso acorde a la normativa internacional, para la implementación de mantenimientos de SSFV."
+				textTitle="Mantenimiento de sistemas fotovoltaicos"
+				bgColor="#00e95fcf"
+				height="32"
+				client:load
+			/>
 		</div>
 	</section>
 </ProjectsLayout>
