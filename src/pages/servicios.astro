@@ -1,6 +1,6 @@
 ---
 import ProjectsLayout from "../layouts/ProjectsLayout.astro";
-import { ItemAcordion } from "../components/ItemAcordion";
+import { AcordionContainer } from "../components/AcordionContainer";
 ---
 
 <ProjectsLayout title="Servicios - Ciudad Renovable">
@@ -41,14 +41,14 @@ import { ItemAcordion } from "../components/ItemAcordion";
 			</div>
 		</div>
 
-		<div class="p-8 flex flex-col gap-4 max-w-screen-md">
-			<ItemAcordion
+		<div class="p-8 flex flex-col gap-4">
+			<AcordionContainer client:load />
+			<!-- <ItemAcordion
 				icon="/icons/light.svg"
 				textInfo="Ciudad Renovable es una empresa especializada en el diseño, construcción, operación y consultoría de proyectos de ingeniería con enfoque en energía solar, asegurando la eficiencia energética y optimizando el uso de los recursos. En Ciudad Renovable encuentras acompañamiento constante y especializado durante y después de tu proyecto de diseño, construcción o consultoría, respaldados por nuestra experiencia y equipo humano lo que nos permite brindarte la confianza para realizar tu proyecto de manera segura y eficiente"
 				textTitle="Somos especialistas en proyectos de ingeniería con enfoque en energía"
 				height="56"
 				bgColor="#00E95F"
-				client:load
 			/>
 
 			<ItemAcordion
@@ -57,7 +57,6 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="EPC para sistemas solares fotovoltaicos"
 				height="20"
 				bgColor="#00e95fcf"
-				client:load
 			/>
 
 			<ItemAcordion
@@ -66,7 +65,6 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="Desarrollo de diseño e ingeniería detallada de sistemas solares fotovoltaicos e iluminación"
 				bgColor="#00e95f"
 				height="32"
-				client:load
 			/>
 
 			<ItemAcordion
@@ -75,7 +73,6 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="Legalización de proyectos solares fotovoltaicos bajo resolución CREG 174 de 2021"
 				bgColor="#51516B"
 				height="32"
-				client:load
 			/>
 
 			<ItemAcordion
@@ -84,7 +81,6 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="Estudios de prefactibilidad, factibilidad y desarrollo de proyectos a gran escala"
 				bgColor="#51516bd4"
 				height="32"
-				client:load
 			/>
 
 			<ItemAcordion
@@ -93,10 +89,9 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="Trámites de beneficios tributarios de ley 1715 de 2014"
 				bgColor="#51516b9c"
 				height="32"
-				client:load
 			/>
 
-			<!-- <div class="bg-[#00E95F] flex flex-row items-center p-4 h-28">
+			<div class="bg-[#00E95F] flex flex-row items-center p-4 h-28">
 				<img
 					class="border-r-2 w-14 pr-2 border-[#021731]"
 					src="/icons/light.svg"
@@ -107,7 +102,7 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				>
 					Gerencia de proyectos de ingeniería eléctrica
 				</p>
-			</div> -->
+			</div> 
 
 			<ItemAcordion
 				icon="/icons/circleCheck.svg"
@@ -115,8 +110,7 @@ import { ItemAcordion } from "../components/ItemAcordion";
 				textTitle="Mantenimiento de sistemas fotovoltaicos"
 				bgColor="#00e95fcf"
 				height="32"
-				client:load
-			/>
+			/> -->
 		</div>
 	</section>
 </ProjectsLayout>

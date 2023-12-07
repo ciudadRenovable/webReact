@@ -7,7 +7,7 @@ const ItemAcordion = ({ bgColor, icon, textTitle, textInfo, height }) => {
   return (
     <>
       <div onClick={() => setIsActive(!isActive)}
-        className={`bg-[${bgColor}] flex flex-row items-center p-4 h-28 cursor-pointer`}>
+        className={`${bgColor} flex flex-row items-center p-4 h-28 cursor-pointer`}>
         <img
           className="border-r-2 w-14 pr-2 border-[#021731]"
           src={icon}
