@@ -13,14 +13,23 @@ export const CarouselProjects = () => {
       <div className='flex flex flex-col lg:flex-row gap-5 flex-wrap md:flex-nowrap'>
         <div className="card">
           <img src="/images/projects/tiendasAra.png" alt="" />
+          <div className='info_type_project'>
+            Industrial
+          </div>
           <h2>Tiendas ARA</h2>
         </div>
         <div className="card">
           <img src="/images/projects/tronexVitelsa.png" alt="" />
+          <div className='info_type_project'>
+            Industrial
+          </div>
           <h2>Tronex Vitelsa</h2>
         </div>
         <div className="card">
           <img src="/images/projects/yokoMotor.png" alt="" />
+          <div className='info_type_project'>
+            Industrial
+          </div>
           <h2>Yokomotor</h2>
         </div>
       </div>

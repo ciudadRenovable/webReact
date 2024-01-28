@@ -18,7 +18,7 @@
   /* H2 TITULOS */
   font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: normal;
 }
 
@@ -30,4 +30,18 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.info_type_project {
+  background-color: #00E95F;
+  width: 166px;
+  height: 43px;
+  border-radius: 15px;
+  color: #021731;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
+  font-size: 16;
+  font-weight: 400;
 }
