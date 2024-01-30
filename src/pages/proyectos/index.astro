@@ -436,6 +436,9 @@ import LayoutProjects from "../../layouts/ProjectsLayout.astro";
           <img class="h-[347px] object-cover rounded-2xl"
             src=${project.listImgProject[0]}
             alt="imagen ${project.nameProject}">
+            <div class='bg-[#00E95F] h-[43px] w-[166px] text-[#021731] text-center rounded-2xl place-content-center grid mx-auto font-semibold'>
+              ${project.info.systemType}
+            </div>
           <h2 class="text-center text-[#51516b] lg:text-2xl text-xl font-bold">
             ${project.nameProject}
           </h2>
